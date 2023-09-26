@@ -11,7 +11,7 @@
  * @author Fran&ccedil;ois B&eacute;langer
  * @author Dr Timothy C. Lethbridge
  */
-public class PointCP2
+public abstract class PointCP5
 {
   //Instance variables ************************************************
 
