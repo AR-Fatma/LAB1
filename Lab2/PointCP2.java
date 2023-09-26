@@ -1,7 +1,6 @@
 public class PointCP2 extends PointCP5 {
    
    
-    private char typeCoord;
     
     private double Rho;
     
@@ -12,10 +11,8 @@ public class PointCP2 extends PointCP5 {
     
     public PointCP2( double Rho, double yOrTheta)
     {
-      
       this.Rho = Rho;
       this.Theta = Theta;
-      
     }
       
     
@@ -82,10 +79,12 @@ public class PointCP2 extends PointCP5 {
       double radRotation = Math.toRadians(rotation);
       double X = getX();
       double Y = getY();
-          
-      return new PointCP2('C',
-        (Math.cos(radRotation) * X) - (Math.sin(radRotation) * Y),
-        (Math.sin(radRotation) * X) + (Math.cos(radRotation) * Y));
+      PointCP2 temp = new PointCP2('C',
+        (Math.cos(radRotation) * getX()) - (Math.sin(radRotation) * getY()),
+        (Math.sin(radRotation) * getX()) + (Math.cos(radRotation) * getY())); 
+      double the = temp.getTheta();
+	  double rh = temp.getRho();
+	  return new PointCP2(rh,the);
     }
   
     /**
