@@ -166,3 +166,4 @@ public abstract class PointCP5
        : "Polar [" + getRho() + "," + getTheta() + "]") + "\n";
   }
 }
+
