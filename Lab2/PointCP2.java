@@ -95,7 +95,6 @@ public class PointCP2 extends PointCP5 {
     public String toString()
     {
       return "Stored as " + (typeCoord == 'P' 
-         ? "Cartesian  (" + getX() + "," + getY() + ")"
-         : "Polar [" + getRho() + "," + getTheta() + "]") + "\n";
+         ? "Cartesian  (" + getX() + "," + getY() + ")"+ "\n";
     }
 }

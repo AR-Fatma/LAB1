@@ -112,7 +112,6 @@ public class PointCP3 extends PointCP5{
    */
   public String toString()
   {
-    return "Stored as Polar"+ getTheta()  (" + getX() + "," + getY() + ")"
-       : "Polar [" + getRho() + "," + getTheta() + "]") + "\n";
+    return "Stored as " + "Polar [" + getRho() + "," + getTheta() + "]") + "\n";
   }
 }
