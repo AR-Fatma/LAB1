@@ -173,33 +173,16 @@ public class PointCP
 		double xOrRhoOriginal = xOrRho;
 		double yOrThetaOriginal = yOrTheta;
 		for (int i = 0; i < 10000; i++) {
-			if (typeCoord == 'C') {
-				convertStorageToPolar();
-				if (typeCoordOriginal == 'P') {
-					if ((xOrRhoOriginal != xOrRho) || (yOrThetaOriginal != yOrTheta)) {
-						return true;
-					}
-				}
-			} else {
-				convertStorageToCartesian();
-				if (typeCoordOriginal == 'C') {
-					if ((xOrRhoOriginal != xOrRho) || (yOrThetaOriginal != yOrTheta)) {
-						return true;
-					}
-				}
-			}
-			
+			if (typeCoord == 'C') convertStorageToPolar();
+			else convertStorageToCartesian();
+			if (typeCoordOriginal == typeCoord &&((xOrRhoOriginal != xOrRho) || (yOrThetaOriginal != yOrTheta))) return true;
 		}
 		return false;
-		
 	}
 	
 	public static void main(String args[]) {
 		PointCP point = new PointCP('C', 3.1111111111111, 4.6666666666666);
-		if (point.lostAccuracy() == true) {
-			System.out.println("The instance variables lost accuracy");
-		} else {
-			System.out.println("The instance variables lost accuracy");
-		}
+		if (point.lostAccuracy()) System.out.println("The instance variables lost accuracy");
+		else System.out.println("The instance variables has not lost accuracy");
 	}
 }
