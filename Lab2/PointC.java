@@ -1,4 +1,4 @@
-public class PointCP3 extends PointCP5{
+public class PointC extends Point{
   //Instance variables ************************************************
 
   /**
@@ -24,7 +24,7 @@ public class PointCP3 extends PointCP5{
   /**
    * Constructs a coordinate object, with a type identifier.
    */
-  public PointCP(double x, double y)
+  public PointC(double x, double y)
   {
     
     this.x = x;
@@ -48,24 +48,16 @@ public class PointCP3 extends PointCP5{
   public double getRho()
   {
    
-    return (Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)));
+    return (Math.sqrt(Math.pow(getX(), 2) + Math.pow(getY(), 2)));
   }
   
   public double getTheta()
   {
    
-    return Math.toDegrees(Math.atan2(y, x));
+    return Math.toDegrees(Math.atan2(getY(), getX()));
   }
   
 	
-  /**
-   * Converts Cartesian coordinates to Polar coordinates.
-   */
-  
-	
-  /**
-   * Converts Polar coordinates to Cartesian coordinates.
-   */
   
 
   /**
@@ -76,7 +68,7 @@ public class PointCP3 extends PointCP5{
    * @param pointB The second point.
    * @return The distance between the two points.
    */
-  public double getDistance(PointCP pointB)
+  public double getDistance(Point pointB)
   {
     // Obtain differences in X and Y, sign is not important as these values
     // will be squared later.
@@ -86,6 +78,7 @@ public class PointCP3 extends PointCP5{
     return Math.sqrt((Math.pow(deltaX, 2) + Math.pow(deltaY, 2)));
   }
 
+
   /**
    * Rotates the specified point by the specified number of degrees.
    * Not required until E2.30
@@ -94,17 +87,25 @@ public class PointCP3 extends PointCP5{
    * @param rotation The number of degrees to rotate the point.
    * @return The rotated image of the original point.
    */
-  public PointCP rotatePoint(double rotation)
+  public PointC rotatePoint(double rotation)
   {
     double radRotation = Math.toRadians(rotation);
     double X = getX();
     double Y = getY();
         
-    return new PointCP3(,
+    return new PointC(
       (Math.cos(radRotation) * X) - (Math.sin(radRotation) * Y),
       (Math.sin(radRotation) * X) + (Math.cos(radRotation) * Y));
   }
-
+	
+	public PointP convertStorageToPolar(){
+		return new PointP(getRho(),getTheta());
+		
+	}
+  
+	public PointC convertStorageToCartesian(){
+		return this;
+	}
   /**
    * Returns information about the coordinates.
    *
@@ -112,6 +113,6 @@ public class PointCP3 extends PointCP5{
    */
   public String toString()
   {
-    return "Stored as " + "Polar [" + getRho() + "," + getTheta() + "]") + "\n";
+    return "Stored as Cartesian"+  "(" + getX() + "," + getY() + ")"+ "\n";
   }
 }

@@ -11,11 +11,8 @@
  * @author Fran&ccedil;ois B&eacute;langer
  * @author Dr Timothy C. Lethbridge
  */
-public abstract class PointCP5{
+public abstract class Point{
   
-  public PointCP5( double xOrRho, double yOrTheta)
-  {
-  }
 	
   
   //Instance methods **************************************************
@@ -43,7 +40,7 @@ public abstract class PointCP5{
    * @param pointB The second point.
    * @return The distance between the two points.
    */
-  abstract double getDistance(PointCP pointB)
+  abstract double getDistance(Point pointB);
  
 
   /**
@@ -54,15 +51,13 @@ public abstract class PointCP5{
    * @param rotation The number of degrees to rotate the point.
    * @return The rotated image of the original point.
    */
-  abstract PointCP rotatePoint(double rotation)
+  abstract Point rotatePoint(double rotation);
   
+  abstract PointP convertStorageToPolar();
+  
+  abstract PointC convertStorageToCartesian();
 
-  /**
-   * Returns information about the coordinates.
-   *
-   * @return A String containing information about the coordinates.
-   */
-  abstract String toString()
+  
   
 }
 

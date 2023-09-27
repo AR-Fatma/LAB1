@@ -1,4 +1,4 @@
-public class PointCP2 extends PointCP5 {
+public class PointP extends Point {
    
    
     
@@ -9,7 +9,7 @@ public class PointCP2 extends PointCP5 {
       
     
     
-    public PointCP2( double Rho, double yOrTheta)
+    public PointP( double Rho, double Theta)
     {
       this.Rho = Rho;
       this.Theta = Theta;
@@ -56,7 +56,7 @@ public class PointCP2 extends PointCP5 {
      * @param pointB The second point.
      * @return The distance between the two points.
      */
-    public double getDistance(PointCP2 pointB)
+    public double getDistance(Point pointB)
     {
       // Obtain differences in X and Y, sign is not important as these values
       // will be squared later.
@@ -74,19 +74,27 @@ public class PointCP2 extends PointCP5 {
      * @param rotation The number of degrees to rotate the point.
      * @return The rotated image of the original point.
      */
-    public PointCP2 rotatePoint(double rotation)
+    public PointP rotatePoint(double rotation)
     {
       double radRotation = Math.toRadians(rotation);
       double X = getX();
       double Y = getY();
-      PointCP2 temp = new PointCP2('C',
-        (Math.cos(radRotation) * getX()) - (Math.sin(radRotation) * getY()),
-        (Math.sin(radRotation) * getX()) + (Math.cos(radRotation) * getY())); 
+      PointC temp = new PointC(
+	  (Math.cos(radRotation) * getX()) - (Math.sin(radRotation) * getY()),
+	  (Math.sin(radRotation) * getX()) + (Math.cos(radRotation) * getY())); 
       double the = temp.getTheta();
 	  double rh = temp.getRho();
-	  return new PointCP2(rh,the);
+	  return new PointP(rh,the);
     }
+	public PointP convertStorageToPolar(){
+		return this;
+		
+		
+	}
   
+	public PointC convertStorageToCartesian(){
+		return new PointC(getX(),getY());
+	}
     /**
      * Returns information about the coordinates.
      *
@@ -94,7 +102,6 @@ public class PointCP2 extends PointCP5 {
      */
     public String toString()
     {
-      return "Stored as " + (typeCoord == 'P' 
-         ? "Cartesian  (" + getX() + "," + getY() + ")"+ "\n";
+      return "Stored as Polar ["+  getRho() + "," + getTheta() + "]"+ "\n";
     }
 }
