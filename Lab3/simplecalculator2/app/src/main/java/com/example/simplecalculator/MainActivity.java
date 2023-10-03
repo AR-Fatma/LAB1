@@ -83,6 +83,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickFunctionButton(View view) {
+        int pressID = view.getId();
+        if (pressID == R.id.button0) {
+            resultText.setText(resultText.getText() + "0");
+        } else if (pressID == R.id.button1) {
+            resultText.setText(resultText.getText() + "1");
+        } else if (pressID == R.id.button2) {
+            resultText.setText(resultText.getText() + "2");
+        } else if (pressID == R.id.button3) {
+            resultText.setText(resultText.getText() + "3");
+    }
 
     }
 
