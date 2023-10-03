@@ -1,10 +1,12 @@
-package com.uottawa.eecs.simplecalculator;
+package com.example.simplecalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.simplecalculator.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -81,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickFunctionButton(View view) {
-        // Add your code here...
+
     }
 
 }
