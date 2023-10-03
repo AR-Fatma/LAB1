@@ -11,7 +11,7 @@
  * @author Fran&ccedil;ois B&eacute;langer
  * @author Dr Timothy C. Lethbridge
  */
-public abstract class PointCP5
+public class PointCP
 {
   //Instance variables ************************************************
 
@@ -165,4 +165,24 @@ public abstract class PointCP5
        ? "Cartesian  (" + getX() + "," + getY() + ")"
        : "Polar [" + getRho() + "," + getTheta() + "]") + "\n";
   }
+
+
+// Added method to check the weakness of successive calls to conversion
+    public boolean lostAccuracy() {
+		char typeCoordOriginal = typeCoord;
+		double xOrRhoOriginal = xOrRho;
+		double yOrThetaOriginal = yOrTheta;
+		for (int i = 0; i < 10000; i++) {
+			if (typeCoord == 'C') convertStorageToPolar();
+			else convertStorageToCartesian();
+			if (typeCoordOriginal == typeCoord &&((xOrRhoOriginal != xOrRho) || (yOrThetaOriginal != yOrTheta))) return true;
+		}
+		return false;
+	}
+	
+	public static void main(String args[]) {
+		PointCP point = new PointCP('C', 3.1111111111111, 4.6666666666666);
+		if (point.lostAccuracy()) System.out.println("The instance variables lost accuracy");
+		else System.out.println("The instance variables has not lost accuracy");
+	}
 }
