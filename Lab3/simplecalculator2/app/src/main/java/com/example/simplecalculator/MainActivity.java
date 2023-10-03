@@ -83,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickFunctionButton(View view) {
+        CharSequence result = resultText.getText();
+        if (result.charAt(result.length()-1) == );
         int pressID = view.getId();
         if (pressID == R.id.buttonDiv) {
             resultText.setText(resultText.getText() + "/");
