@@ -43,28 +43,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:onClick="onClickNumericalButton"
+            android:text="7 " />
 
         <Button
             android:id="@+id/button8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:onClick="onClickNumericalButton"
+            android:text="8" />
 
         <Button
             android:id="@+id/button9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:onClick="onClickNumericalButton"
+            android:text="9" />
 
         <Button
             android:id="@+id/buttonDiv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:onClick="onClickFunctionButton"
+            android:text="/" />
     </LinearLayout>
 
     <LinearLayout
@@ -82,28 +86,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:onClick="onClickNumericalButton"
+            android:text="4" />
 
         <Button
             android:id="@+id/button5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:onClick="onClickNumericalButton"
+            android:text="5" />
 
         <Button
             android:id="@+id/button6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:onClick="onClickNumericalButton"
+            android:text="6" />
 
         <Button
             android:id="@+id/buttonMul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:onClick="onClickFunctionButton"
+            android:text="*" />
     </LinearLayout>
 
     <LinearLayout
@@ -121,28 +129,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:onClick="onClickNumericalButton"
+            android:text="1" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:onClick="onClickNumericalButton"
+            android:text="2" />
 
         <Button
             android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:onClick="onClickNumericalButton"
+            android:text="3" />
 
         <Button
             android:id="@+id/buttonMinus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:onClick="onClickFunctionButton"
+            android:text="-" />
     </LinearLayout>
 
     <LinearLayout
@@ -160,28 +172,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:onClick="onClickFunctionButton"
+            android:text="." />
 
         <Button
             android:id="@+id/button0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:onClick="onClickNumericalButton"
+            android:text="0" />
 
         <Button
             android:id="@+id/buttonEq"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:onClick="onClickFunctionButton"
+            android:text="=" />
 
         <Button
             android:id="@+id/buttonPLus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:onClick="onClickFunctionButton"
+            android:text="+" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
