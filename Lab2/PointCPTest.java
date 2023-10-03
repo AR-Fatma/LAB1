@@ -66,6 +66,11 @@ public class PointCPTest
     System.out.println("\nAfter asking to store as Cartesian:\n" + point);
     point = point.convertStorageToPolar();
     System.out.println("\nAfter asking to store as Polar:\n" + point);
+	point = point.convertStorageToCartesian();
+	System.out.println("Distance between point ("+ point.getX() + "," + point.getY() + ") and point (4,4): " + point.getDistance(new PointC(4,4)));
+	point = point.rotatePoint(90);
+	System.out.println("\nAfter rotating the point by 90 degrees:\n" + point);
+	
   }
 
   /**
