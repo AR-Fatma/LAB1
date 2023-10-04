@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     // Feel free to re-implement or modidy.
     public void onClickNumericalButton(View view) {
 
-
+        if (opp == Operator.eq) resultText.setText("");
         //Getting ID of pressed Button
         int pressID = view.getId();
         CharSequence result = resultText.getText();
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         } else if (pressID == R.id.button9) {
             resultText.setText(resultText.getText() + "9");
         } else if (pressID == R.id.buttonDot&&hasDot==false&&resultText.getText().toString()!=""
-                && Character.isDigit(resultText.getText().toString().charAt(resultText.getText().toString().length()-1))) {
+                && Character.isDigit(resultText.getText().toString().charAt(resultText.getText().toString().length()-1))&& opp!=Operator.eq) {
             resultText.setText(resultText.getText() + ".");
             hasDot=true;
         }
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
                 resultText.setText(resultText.getText() + "-");
                 opp = Operator.sub;
             }
-            else if (pressID==R.id.buttonEq){
+            else if (pressID==R.id.buttonEq&&resultText.getText()!=""){
                 resultText.setText(resultText.getText()+"\n"+"\n"+ Double.toString(calculate()));
                 opp = Operator.eq;
             }
