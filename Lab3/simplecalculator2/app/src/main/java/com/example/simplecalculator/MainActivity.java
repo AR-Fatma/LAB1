@@ -124,9 +124,9 @@ public class MainActivity extends AppCompatActivity {
         String numbers = resultText.getText().toString().replaceAll("\\+",",").replaceAll("-",",").replaceAll("\\*",",").replaceAll("/",",");
         Toast.makeText(getApplicationContext(),numbers,Toast.LENGTH_SHORT).show();
         String[] numbersarr = numbers.split(",");
-        double[] doublesarr = new double[numbersarr.length];
+        double[] nums = new double[numbersarr.length];
         for (int j = 0; j < numbersarr.length;j++){
-            doublesarr[j] = Double.valueOf(numbersarr[j]);
+            nums[j] = Double.valueOf(numbersarr[j]);
         }
         String operators1 = "";
         for (int i = 0; i < equation.length();i++){
@@ -134,13 +134,45 @@ public class MainActivity extends AppCompatActivity {
                 operators1+= equation.charAt(i);
             }
         }
-        char[] operators = operators1.toCharArray();
-        Toast.makeText(getApplicationContext(), Arrays.toString(operators),Toast.LENGTH_SHORT).show();
+        char[] opps = operators1.toCharArray();
+        Toast.makeText(getApplicationContext(), Arrays.toString(opps),Toast.LENGTH_SHORT).show();
         //THE ABOVE CODE PUTS NUMBERS INTO AN ARRAY AND OPERATORS IN ANOTHER ARRAY, BELLOW WILL HAVE THE CODE TO EVALUATE THE EXPRESSION FROM THE ARRAYS
 
+        boolean used;
+        //mul and div loop
+        for (int i = 0; i<opps.length;i++){
+            used = false;
+            if (opps[i]=='/'||opps[i]=='*'){
+                for (int j = i+1; j<nums.length;j++){
+                    if (!used&&nums[j]>=0){
+                        if (opps[i]=='/') nums[j]= nums[i]/nums[j];
+                        else nums[j] = nums[i]*nums[j];
+                        used = true;
+                        nums[i]=-1;
+                    }
+                }
+            }
+        }
+        //add and sub loop
+        for (int r = 0; r<opps.length;r++){
+            used = false;
+            if (opps[r]=='+'||opps[r]=='-'){
+                for (int s = r+1; s<nums.length;s++){
+                    if (!used&&nums[s]>=0){
+                        if (opps[r]=='+') nums[s]= nums[r]+nums[s];
+                        else nums[s] = nums[r]-nums[s];
+                        used = true;
+                        nums[r]=-1;
+                    }
+                }
+            }
+        }
 
 
-        return 0;
+
+
+
+        return nums[nums.length-1];
     }
 
 }
