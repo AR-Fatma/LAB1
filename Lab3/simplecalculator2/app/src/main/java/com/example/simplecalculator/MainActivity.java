@@ -136,7 +136,11 @@ public class MainActivity extends AppCompatActivity {
         }
         char[] operators = operators1.toCharArray();
         Toast.makeText(getApplicationContext(), Arrays.toString(operators),Toast.LENGTH_SHORT).show();
-        return doublesarr[1];
+        //THE ABOVE CODE PUTS NUMBERS INTO AN ARRAY AND OPERATORS IN ANOTHER ARRAY, BELLOW WILL HAVE THE CODE TO EVALUATE THE EXPRESSION FROM THE ARRAYS
+
+
+
+        return 0;
     }
 
 }
