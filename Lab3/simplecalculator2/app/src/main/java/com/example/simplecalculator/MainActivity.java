@@ -122,7 +122,6 @@ public class MainActivity extends AppCompatActivity {
     private double calculate() {
         String equation = resultText.getText().toString();
         String numbers = resultText.getText().toString().replaceAll("\\+",",").replaceAll("-",",").replaceAll("\\*",",").replaceAll("/",",");
-        Toast.makeText(getApplicationContext(),numbers,Toast.LENGTH_SHORT).show();
         String[] numbersarr = numbers.split(",");
         double[] nums = new double[numbersarr.length];
         for (int j = 0; j < numbersarr.length;j++){
@@ -135,7 +134,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         char[] opps = operators1.toCharArray();
-        Toast.makeText(getApplicationContext(), Arrays.toString(opps),Toast.LENGTH_SHORT).show();
         //THE ABOVE CODE PUTS NUMBERS INTO AN ARRAY AND OPERATORS IN ANOTHER ARRAY, BELLOW WILL HAVE THE CODE TO EVALUATE THE EXPRESSION FROM THE ARRAYS
 
         boolean used;
