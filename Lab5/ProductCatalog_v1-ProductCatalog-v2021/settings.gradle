@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "ProductCatalog_v2021"
 include ':app'
+//Megan doing this
