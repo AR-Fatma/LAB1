@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.productcatalog_v2021"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.productcatalog_v2021"
