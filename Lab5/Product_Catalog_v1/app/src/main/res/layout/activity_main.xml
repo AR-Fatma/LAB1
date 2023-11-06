@@ -26,7 +26,7 @@
             android:gravity="center"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:hint="editTextName" />
+            android:hint="Name" />
 
         <Space
             android:layout_width="match_parent"
@@ -42,7 +42,7 @@
             android:gravity="center"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:hint="editTextPrice" />
+            android:hint="Price" />
 
         <Space
             android:layout_width="match_parent"
@@ -52,7 +52,7 @@
             android:id="@+id/addButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="addButtonName" />
+            android:text="Add" />
 
         <Space
             android:layout_width="match_parent"
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="textViewName"
+            android:text="Items"
             android:textFontWeight="@integer/material_motion_duration_long_1"
             android:textSize="20dp" />
 
